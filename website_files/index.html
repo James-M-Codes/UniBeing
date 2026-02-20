@@ -1,17 +1,841 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <body>
-    <nav>
+<!doctype html><!--HTML5 doctype declaration -->
+<html lang="en"><!--default language of the document content -->
+	
+    <head>
+		<meta charset="utf-8"><!--character encoding for the document (Unicode) -->
+		<meta name="viewport" content = "width=device-width, initial-scale=1">
+		<title>CI435 Learning Journal</title><!--web page title -->
+		<link rel="icon" type="image/ico" href = "Images/favicon.ico">
+		<link href = "CSS/normalize.css" rel="stylesheet">
+		<link href = "CSS/stylesheet.css" rel="stylesheet">
+	</head>
 
-    </nav>
-    <aside>
+<body>
+<!--Markup all web page content inside the 'body' tags -->
+	<div id="wrapper">
+	<a id="Top"></a>
+	<!--The 'wrapper' contains all the page content-->
+	
+    <header class="banner"><!--The main heading for the page -->
+		<h1>CI435 Learning Journal</h1>
+		<h2>How to make a website using only HTML?</h2>
+	</header>
+	
+    <nav class="menu"><!--The primary navigation for the page -->
+	<ul>
+		<li><a href="">Learning Journal</a></li>
+		<li><a href="tutorial.html">Tutorial</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+		<li><a href="jscript/jscriptlabs.html">JavaScript learning journal</a></li>
+	</ul>
+	</nav>
 
-    </aside>
-    <footer>
-
-    </footer>
+	<nav>
+		<h3>Weekly posts</h3>
+		<ol>
+			<li><a href="#week6">Preparing my website for the exam</a></li>
+			<li><a href="#week5">Contact Forms and Testing / Evaluation</a></li>
+			<li><a href="#week4">More Responsive Web Design</a></li>
+			<li><a href="#week3">More Cascading Style Sheets and Responsive Web Design</a></li>
+			<li><a href="#week2">HTML Markup</a></li>
+			<li><a href="#week1">Creating three HTML webpages, and linking them together.</a></li>
+			<li><a href="#week0">Induction tutorial for Web Development.</a></li>	
+		</ol>
+	</nav>
+	<table>
+		<caption>My University Timetable</caption>
+		<tr>
+		  <th>Day/time</th>
+		  <th>Tuesday</th>
+		  <th>Wednesday</th>
+		  <th>Friday</th>
+		</tr>
+		<tr>
+		  <td>9-11am</td>
+		  <td></td>
+		  <td>CI453 Lab <br>Watts 201 / 202 Computer Room<br> Shine Shan, William Wilkinson</td>
+		  <td>CI435 Lab <br>Watts 201 / 202 Computer Room<br> Marcus Winters, Robin Heath</td>
+		</tr>
+		<tr>
+		  <td>11am-1pm</td>
+		  <td>CI435 lecture <br> Mithras G8 Lecture Theatre<br> Jennie Harding, Robin Heath</td>
+		  <td>CI406 lab <br> Cockcroft 419 Computer Lab <br> Gulden Uchyigit </td>
+		  <td></td>
+		</tr>
+		<tr>
+			<td>2-3pm</td>
+			<td></td>
+			<td></td>
+			<td>CI453 lecture <br> Mithras G8 Lecture Theatre <br> Phil Jackson</td>
+		</tr>
+		<tr>
+			<td>2-4pm</td>
+			<td>CI406 lecture <br> Cockcroft G50 Lecture Theatre <br> Gulden Uchyigit </td>
+			<td></td>
+			<td></td>
+		</tr>
+	  </table>
     
-    </body>
-    </html>
-</head>
+    <main><!--The main page content -->
+        
+        	<h2>Weekly Posts</h2>
+	
+    	<article>
+			<header class="posts">
+			<h3>Learning Journal</h3>
+			</header>
+			<h2><strong>This page is currently under construction. Please stay tuned for further updates.</strong></h2>
+		</article>
+
+		<article>
+			<a id = "week6"></a>
+			<header class="posts">
+				<h3>Week 6: Preparing my website for the exam</h3>
+				<p>Published <time datetime="2025-03-14">14 March 2025</time></p>
+			</header>
+
+			<p class="dropcap">
+				For Tutorial 10, I had to adapt my website to meet the specifications for the exam. I had to change the colour to #dae0ef, which made the website a purply blue colour. I then had to use a colour leglibity website to see
+				if the website was legible or not. When I discovered that it wasn't, I kept making the colour darker, until there was some colours that was readable. I chose #071792 for text, and #7f0606 for headings.
+				I then had to remove ALL references, as none of them were my own work, and I could not have them on the site.
+				This is what my website looked like after I made these changes:
+			</p>
+
+			<figure>
+				<img src="Images/website_14_03_2025.PNG" alt="My index page c. 14th of March 2025">
+				<figcaption>
+					My Index page as of the 14th of March 2025.
+					<small>Screenshot taken by: &copy; Luke Hirst. All rights reserved.</small>
+				</figcaption>
+			</figure>
+		</article>
+
+		<article>
+			<a id = "week5"></a>
+			<header class = "posts">
+				<h3>Week 5: Contact Forms and Testing / Evaluation</h3>
+				<p>Published <time datetime="2025-03-07">7 March 2025</time></p>
+			</header>
+
+			<p class="dropcap">
+				For Tutorial 9, I had to create a contact form on my contact me page, which wouldn't actually do anything, but instead it would serve as a way to fill in potential information later on.
+				First, I needed to insert a form on the contact.html page between the navigation and the footer on the webpage. This is what that code looks like:
+
+			</p>
+
+				<figure>
+					<img src="Images/form_code.PNG" alt="The code for the contact form in Visual Studio Code">
+					<figcaption>The contact form written in my contact.html file in VS Code
+					<small>Screenshot by &copy; Luke Hirst. All rights reserved.</small>
+					</figcaption>
+				</figure>
+
+				<p>
+					Next, I had to add a legend and fieldset to the form. I also had to fix the colours, as the white was clashing very badly with the background, and it could have cause discomfort in the eyes.
+					Here is what the new code looked like, with legend and fieldset added to the webpage:
+				</p>
+
+				<figure>
+					<img src="Images/form_updated.PNG" alt="The code for the form updated to now have fieldset and legend added.">
+					<figcaption>The updated contact form written in VS code.
+						<small>Screenshot by &copy; Luke Hirst. All rights reserved.</small>
+					</figcaption>
+				</figure>
+				
+				<p>
+					The next part that I needed to do was to make a text area under the fieldset field in the contact.html file in Visual Studio Code. I had to look at the example to see how to properly implement it, but I did get it working.
+					I also made the text area on the form be a minimum of 10em, and a maximum of 70em. This allowed users to have ample space to write their text in.
+					This is what the code looked like now for the form:
+				</p>
+
+				<figure>
+					<img src="Images/form_textarea.PNG" alt="Updated form with new elements">
+					<figcaption>The contact form with a text area added into the webpage.
+						<small>Screenshot by &copy; Luke Hirst. All rights reserved.</small>
+					</figcaption>
+				</figure>
+
+				<p>
+					Next, I had to implement radio buttons beneath the comment section. I had to make two, one for yes, and one for no. This is what the finished code looked like in VS Code.
+				</p>
+
+				<figure>
+					<img src="Images/form_radio.PNG" alt="Radio buttons added to the code.">
+					<figcaption>The contact form with radio buttons added into my webpage.
+						<small>Screenshot by: &copy; Luke Hirst. All rights reserved.</small>
+					</figcaption>
+				</figure>
+
+				<p>
+					To finish up the form, I simply had to add this line of code to the webpage: <code>input type="submit" value="Send information"</code>
+				</p>
+
+				<p>Next, I needed to have a play around with these HTML elements:</p>
+
+				<figure>
+					<img src="Images/html_example.PNG" alt="Some HTML elements to play around with on my website.">
+					<figcaption>Some HTML elements to experiment with on my website.
+					</figcaption>
+				</figure>
+
+				<p>This is what these elements looked liked in my code:</p>
+
+				<figure>
+					<img src="Images/experimenting_HTML.PNG" alt="Some HTML elements to play around with on my website.">
+					<figcaption>The new HTML elements that I added as an experiment.
+					</figcaption>
+				</figure>
+
+				<p>
+					Finally, I then added placeholder text for the name field, and made it a requirement for it to be filled in.
+					This is what my finished contact page looked like:
+
+					<figure>
+						<img src="Images/contact_finished.PNG" alt="My contact page finished.">
+						<figcaption>The completed contact page on my website.
+						</figcaption>
+					</figure>
+
+					<p>Some useful information from Week 5A:</p>
+					
+					<ol>
+						<li>Elements that belong to a form are nested inside the form element.</li>
+						<li>Action is a required attribute for forms. For example, I could add a required tag for a first and last name on a form.</li>
+						<li>The method attribute specifies the HTTP protocol for submitting data to the server. This is either HTTP or HTTPS.</li>
+						<li>Input elements have type attributes, which are used to specify the type
+							of control to display, and the type of data that can be inputted. A button is a example of a input element.
+						</li>
+						<li>Input types are associated with specific controls.</li>
+						<li>Text is used for the input of any text. These are used for text fields on form pages.</li>
+						<li>Checkboxes are used to select zero or more options. For example, I could tick where I lived, and what my nationality was.</li>
+						<li>Radio buttons are used to select only one option from a list. Picking I like dogs is a example of a radio button.</li>
+						<li>Using the name attribute for radios allows users to have multiple radio buttons with the same name, and it allows for only one choice at a time.
+						</li>
+						<li>Submit uses a button control. The button has no default behaviour.</li>
+						<li>Reset is used to reset a form to the default state.</li>
+						<li>The most recent HTML version, HTML5, added 13 new form input types, such as date, color, number
+							and range.
+						</li>
+						<li>The attribute required tells the user that the field needs to be
+							filled in.
+						</li>
+						<li>To help users fill in forms, placeholders should be used.</li>
+						<li>Fieldsets, legends and labels improves accessibility and
+							usability.
+						</li>
+						<li>Different platforms style form elements differently.</li>
+						<li>UX stands for user experience</li>
+						<li>Labels are a inline element.</li>
+					</ol>
+
+					<p>Some useful information from Week 5B:</p>
+					<ol>
+						<li>Most users have a version of Chrome, followed by Safari, Edge (previously Internet Explorer) and Firefox / Other browsers.</li>
+						<li>HTML should be well-written, consistent, indented and
+							commented.
+						</li>
+						<li>CSS that is assigned to a property in HTML will be inherited by
+							that element's children.
+						</li>
+					</ol>
+		</article>
+
+		<article>
+			<a id = "week4"></a>
+			<header class="posts">
+			<h3>Week 4: More Responsive Web Design</h3>
+			<p>Published <time datetime="2025-02-28">28 February 2025</time></p>
+			</header>
+
+			<p class="dropcap">
+				For Tutorial 8, I had to play around with different columns to see what was the best fit for my website. I had a play with flex-boxes, but it generated too many problems, so I
+				decided to stick with multi-column layouts instead. I also played around with tables and made my tutorial page look more like a guide. I edited my spreadsheet to add the new
+				multi-column media queries in, and I also moved the files in my OneDrive from weeks 1 and 2, into a new dedicated website files folder.
+			</p>
+
+			<p>Here is what my tutorial page looked like when it was finished:</p>
+			
+			<figure>
+				<img src = "Images/expanded_tutorial_page.PNG" alt="My expanded tutorial page.">
+				<figcaption>My tutorial page expanded to include a new table.
+					<small>Screenshot by &copy; Luke Hirst. All rights reserved.</small>
+				</figcaption>
+			</figure>
+
+			<p>
+				In tutorial 7b, I looked at putting a background into the body of the website, and also how to create a favicon, which would serve as the website's logo when looking at it from a browser's tab
+				I used this website https://www.favicon.cc/, to create a icon that would be displayed on the website's tab window. I also played around with the background settings, and found that I could fix it to the screen as the user scrolled down.
+			</p>
+
+			<p>Finally, in tutorial 7a, I looked at making an image be a specific width and height, and also how to make an image flexible, where it would grow with the resolution of the screen it was currently on.
+				I started off by making an image in Photoshop, that would later be used for the banner. This is what that image looked like:
+			</p>
+
+			<figure>
+				<img src = "Images/website_banner.jpg" alt="My banner that I made in Adobe Photoshop.">
+				<figcaption>The website's banner, made in Adobe Photoshop.
+					<small>Screenshot by &copy; Luke Hirst. All rights reserved.</small>
+				</figcaption>
+			</figure>
+
+			<p>
+				I then added the following code to make it a fixed size: <code>header class="banner-clipped">
+					img src="filename.png"  width="900" height="150" 
+					alt="Text description of the image"> 
+					header</code>
+
+					Then, I had to write the code where overflow was set to hidden if the banner was clipped.
+			</p>
+
+			<p>
+				Next, I had to make the same thing, but this time, I had to make the banner "flexible". I had a play around with the width and max-width, and eventually found something that worked.
+				After that was done, I then needed to copy and paste some dummy text into my page, and use a div to "clear" the space around the image. I then wrote the following into my HTML document: <code>article img {
+					float: left;
+					padding: 2%;
+					width: 33%; /*image 1/3 width of the article element*/
+					max-width: 240px;/*max-width measurement should be the actual width of your image*/
+				  }
+				  .clear {
+					clear: both;
+				  }</code>
+			</p>
+			
+			<p>For the last step of Tutorial 7a, I had to copy and paste some code that would embed a YouTube video into my index page. I had to copy and paste a div wrapper code that would handle the video wrapper and container. This is the code I had to copy:
+				<code>div class="video-wrapper"
+					div class="video-container"
+					  iframe width="560" height="315" 
+					   src=https://www.youtube.com/embed/TrduBSGtkS4 allowfullscreen>/iframe
+					/div
+				  /div</code>
+			</p>
+
+			<p>The end result was that a University of Brighton video from Christmas was successfully embbeded onto my webpage. Here is what that looked like.</p>
+
+			<figure>
+				<img src = "Images/university_video.PNG" alt="A University of Brighton video from Christmas">
+				<figcaption>A YouTube video embedded onto my website.
+					<small>Screenshot by &copy; Luke Hirst. All rights reserved.</small>
+				</figcaption>
+			</figure>
+
+			<div class="clear"></div>
+
+		</article>
+
+		
+	<header class="banner-clipped">
+		<img src = "Images/website_banner.jpg" width="900" height="150"
+		alt="The banner design for my website">
+		<img src = "Images/website_banner.jpg" class="banner-fluid" alt="The banner design for my website"> 
+	</header>
+
+		<article>
+			<img src = "Images/sketch1.jpg" alt="Sketch of my website for a phone">
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy 
+				nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+				Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+				lobortis nisl ut aliquip ex ea commodo consequat. etc. etc. etc.</p>
+
+				<div class="clear"></div>
+
+				<div class="video-wrapper">
+					<div class="video-container">
+					  <iframe width="560" height="315" 
+					   src=https://www.youtube.com/embed/TrduBSGtkS4 allowfullscreen></iframe>
+					</div>
+				  </div>
+
+				  <div class="video-wrapper">
+					<div class="video-container">
+					  <iframe width="560" height="315" 
+					   src=https://www.youtube.com/embed/TrduBSGtkS4 allowfullscreen></iframe>
+					</div>
+				  </div>
+
+				  <p>Some useful information from Week 4A:</p>
+				  <ol>
+					<li>grid-areas are used to match the HTML element to a wrapper.</li>
+					<li>Fair deal means work can be copied for private purposes.</li>
+					<li>I am allowed to embed media hosted on other sites, provided it is not
+						blocked by the owner.
+					</li>
+					<li>Vectors and Bitmaps are displayed as pixels.</li>
+					<li>Screen resolution refers to number of pixels displayed per unit of length
+						on the screen.
+					</li>
+					<li>ppi (or dpi), is short for Pixels Per Inch</li>
+					<li>Image resolution refers to the number of pixels in a images width and height. - DPI.</li>
+					<li>Pixel dimensions of a image means num. of px. along the width and height of the image.</li>
+					<li>File size is the size of a image file.</li>
+					<li>Images can be optimised.</li>
+					<li>Images that are informative should be in a HTML document.</li>
+					<li>Text descriptions are denoted as the alt attribute.</li>
+					<li>Presentational images can be added as background images in CSS.</li>
+					<li>Bitmaps have fixed pixel dimensions.</li>
+					<li>Flexible images are measured as a percentage of the element in
+						which they are nested.
+					</li>
+					<li>Images should be optimised for the maximum size.</li>
+					<li>File sizes should be as small as possible.</li>
+					<li>SVG stands for Scalable Vector Graphics.</li>
+				  </ol>
+
+				  <p>Some useful information from Week 4B:</p>
+				  <ol>
+					<li>Elements will always float, unless the float is cleared.</li>
+					<li>Float and clear can be used to lay out elements side by side.</li>
+					<li>Position is used to move a element out of the normal flow of a HTML document.</li>
+					<li>The position property can be used in four ways:
+						relative, absolute, fixed or sticky.
+					</li>
+					<li>CSS3 has three modules for the layout:
+						grid layout, multi-column layout and flexible box layout.
+					</li>
+					<li>Readability is best optimal when there are 50-75 characters per line.</li>
+					<li>Multi-columns use the following properties:
+						column-count, column-width, column-gap, column-rule, column-span
+						and column-fill.
+					</li>
+					<li>Flexbox is a alterative box model in CSS3.</li>
+					<li>Flex-direction lays any child elements of the flexbox out in horizontal or vertical rows.</li>
+					<li>Flex-directions can be reversed.</li>
+					<li>Flex-wrap and flex-flow can be used to wrap over multiple lines.</li>
+					<li>Justify content aligns the elements on the main axis.</li>
+					<li>Align-items aligns any elements on the cross axis.</li>
+				  </ol>
+
+				  <div class="clear"></div>
+		</article>
+		
+
+
+		<article>
+			<a id = "week3"></a>
+			<header class="posts">
+				<h3>Week 3: More Cascading Style Sheets and Responsive Web Design</h3>
+				<p>Published <time datetime="2025-02-21">21 February 2025</time></p>
+			</header>
+
+			<p class="dropcap">In this tutorial, I had to make the website more responsive on phones and tablets.
+				This is what I did in the responsive web design tutorial:
+				<ol>
+					<li>Sketched out what each part of my website will look like on different devices</li>
+					<li>Adjusted my HTML as necessary</li>
+					<li>Set up the responsive grid, which now updates across phones, tablets and desktops</li>
+					<li>Stylised each screen for tablets and phones.</li>
+					<li>Hid the table on mobile phone devices.</li>
+					<li>Made all images flexible, so they no longer overwhelm each page.</li>
+					<li>Tested the pages to make them responsive on all devices</li>
+				</ol>
+
+				<figure>
+					<img src="Images/sketch1.jpg" alt="Sketch 1">
+					<figcaption>One Column website sketch.
+						<small>Screenshot taken by &copy; Luke Hirst</small>
+					</figcaption>
+				</figure>
+
+				
+				<figure>
+					<img src="Images/sketch2.jpg" alt="Sketch 2">
+					<figcaption>Two Columns website sketch.
+						<small>Screenshot taken by &copy; Luke Hirst</small>
+					</figcaption>
+				</figure>
+
+				
+				<figure>
+					<img src="Images/sketch3.jpg" alt="Sketch 3">
+					<figcaption>Three Columns website sketch.
+						<small>Screenshot taken by &copy; Luke Hirst</small>
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img src="Images/mobileW3.jpg" alt="My website on a phone">
+					<figcaption>My website on my mobile phone. This is one column only.
+						<small>Screenshot taken by &copy; Luke Hirst</small>
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img src="Images/desktopW3.jpg" alt="My website on a laptop / tablet ">
+					<figcaption>My website on my tablet / laptop. There are three columns.
+						<small>Screenshot taken by &copy; Luke Hirst</small>
+					</figcaption>
+				</figure>
+
+			<p>Today's task was that I needed to continue working with Cascading Style Sheets, and to structure my pages, ready for the website to be made easily responsive on mobile devices.
+				I was not able to start making the website responsive on mobile until I had gotten the structure right first.
+				I was however, allowed to add <code>meta name="viewport" content = "width=device-width, initial-scale=1"></code>, as it was in the before part of the tutorial page.
+				Here are some screenshots of the page before I added the above code, and after:
+			</p>
+
+			<figure>
+				<img src="Images/indexDesktopMobile.jpg" alt="Index page on Mobile, badly shown">
+				<figcaption>The index page of my website before I added the meta code in.
+					<small>Screenshot taken by &copy; Luke Hirst</small>
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Images/indexMobile.jpg" alt="Index page on mobile, much better!">
+				<figcaption>The index page after I added the meta code in to make it suitable for mobiles.
+					<small>Screenshot taken by &copy; Luke Hirst</small>
+				</figcaption>
+			</figure>
+
+			<p>
+				I made a start on my tutorial page, which I decided to make a guide for commuting to and from certain areas by train, to all three campuses.
+				After I made a start, I then continued with the actual tutorial, which was to do more CSS.
+
+				In this tutorial, I did the following:
+				<ol>
+					<li>Created a tutorial page, which I dedicated to a guide on commuting to university from places outside of Brighton</li>
+					<li>Added the Oswald font from Google Fonts to the stylesheet.css file.</li>
+					<li>Stylelised the paragraphs to the specific measurements on the learning tutorial page</li>
+					<li>'Floated an image', and wrapped text around it.</li>
+					<li>Validated my HTML and CSS files.</li>
+				</ol>
+
+				<p>Here is what the website's HTML source code looked like after I had made these changes:</p>
+
+				<figure>
+					<img src="Images/sourceBottom.PNG" alt="The source code of my Index page after adding in the new changes">
+					<figcaption>New additions to my source code.
+						<small>Screenshot taken by &copy; Luke Hirst</small>
+					</figcaption>
+				</figure>
+				
+				<p>Some useful information from Week 3A:</p>
+				<ol>
+					<li>Cascades are used to determine which rules apply to which element,
+						and how to handle conflicts between any rules. This means that seperate stylesheets will always be overriden by newer versions.
+					</li>
+					<li>Descendant selectors are used to match navigation with different pages.</li>
+					<li>The CSS box model controls how elements are displayed and positioned on a web page. An example could be displaying a image, with text around it, clearly
+						seperated with boxes.
+					</li>
+					<li>Elements are usually block level, which usually takes up a whole line on a webpage.</li>
+					<li>Other elements can usually be inline with the block level, which are nested within a block element. This means the the block level is the parent, while the inline level is the child.</li>
+					<li>Boxes can be organised into sequences, or they can be nested inside other boxes.</li>
+					<li>Boxes have four properties: margin, border, padding and content</li>
+					<li>If the box-sizing of a box is the default value, the following CSS properties controls the content-box size:
+						width, min-width, max-width, height, min-height and max-height.
+					</li>
+					<li>Padding is used to create space inside of elements. This sits between the content and the edge of the padding of the box model.</li>
+					<li>Margins are used to create space outside of the element, while still residing inside of the box.</li>
+					<li>Width and height refer to the content area of a box.</li>
+					<li>Margin and padding increase the total size of a box. They also increase the distance between a text element, and a image element for example, allowing users to
+						be able to read them more easily.
+					</li>
+					<li>Height properties are not often defined.</li>
+					<li>Each side of a box can be defined by using:
+						padding-top, padding-right, padding-bottom and padding-left. This is not necessary if the size does not change.</li>
+					<li>Similarly, I can also use the margin-top, margin-right, margin-bottom
+						and margin-left properties.
+					</li>
+					<li>The default value of the background-color or background image elements
+						is transparent. This means that the background colour is white, unless it is changed.</li>
+					<li>The background image element applies a specified image type. They can be any supported image type on computers and browsers, but the most common are:
+						.JPG, .PNG, .SVG and rarely, .TIF
+					</li>
+					<li>Small images can use the background-repeat: repeat; element, but larger images should not use this property, as it could lead to problems.</li>
+					<li>The following can be used to stylise the background
+						properties:
+						background, background-color, background-image, background-repeat
+						and background-position.
+					</li>
+					<li>Absolute units are fixed, whereas relative units are not, meaning they are flexible. Relative units
+						are relative to a value specified for another property type. Relative units should be used more, if the website is supposed to adapt to different screen sizes.
+					</li>
+					<li>Pixel, %, rem, em, vw and vh are the most commonly used relative units in web development.</li>
+					<li>em is the most scaleable relative length unit. This can be used in media queries later on.</li>
+					<li>The default font size for browsers is usually 16 pixels. Some browsers may use different font sizes.</li>
+					<li>The root element of a web document is the html element at the top. This can be thought of as a container for the entire webpage.</li>
+				</ol>
+
+				<p>Some useful information from Week 3B:</p>
+				<ol>
+					<li>Mobile devices have driven a change in web development, with more developers using and targeting mobile devices for their websites. Different screen sizes
+						allows developers to see what the website will look on a phone, a tablet, or a laptop / desktop.
+					</li>
+					<li>Responsive web design consists of three core responsive web design techniques:
+						Fluid, CSS media queries, and responsive media.
+					</li>
+					<li>The viewport is equal to the width of the browser window. This is used to scale webpages to fit on smaller, or larger screens than the device it was originally
+						written on.
+					</li>
+					<li>width=device-width sets the pixel width of the viewport to
+						be equivalent to the screen width of a device.
+					</li>
+					<li>initial-scale tells the browser to render a web page at
+						full size, as opposed to scaling the web page down.
+					</li>
+					<li>CSS media queries are the core mechanic on what makes web pages responsive.
+						They inspect the capability of the device, by checking for:
+						The width and height of the viewport, the target device screen width, the device height, the device's orientation of the screen, screen resolution and aspect ratio.
+					</li>
+					<li>Media queries usually consists of media types, and one or more
+						expressions that checks for media features such as width, height
+						and screen resolution.
+					</li>
+					<li>Media queries are booleans that are either true or false.</li>
+					<li>Media queries are usaully true if the media type matches
+						the device of the user, and if all of the expressions in the media
+						query are true.
+					</li>
+					<li>The media screen CSS element checks whether the media type of the device
+						accessing the screen meets the right pixel requirement.
+					</li>
+					<li>Expressions are written in brackets.</li>
+					<li>The min-width CSS element tests the width of the viewport, to find out if
+						the width is equal or greater than the specified pixels.
+					</li>
+					<li>CSS style rules are nested inside of the query in curly brackets. Custom rules can be set for different elements, by placing a dot at the beginning of
+						the query. For example, writing .buttons, would target the HTML element class of "buttons", and it would then apply the CSS rule to that class.
+					</li>
+					<li>@Media targets different media types. Examples include: tablets, Personal computers, consoles, and phones.</li>
+					<li>The term min means something is equal or greater than, whereas the term max means something is equal or smaller than</li>
+					<li>Standard widths are used as breakpoints. Breakpoints are used to identify and fix bugs in websites that would otherwise slip under the net.</li>
+				</ol>
+
+				<div class="clear"></div>
+
+
+		</article>
+
+		<article>
+			<a id = "week2"></a>
+			<header class="posts">
+				<h3>Week 2: HTML Markup</h3>
+				<p>Published <time datetime='2025-02-14'>14 February 2025</time></p>
+			</header>
+			<p class="dropcap">
+				For this tutorial, I needed to use HTML markup to make the structure of my website compatible with Cascading Style Sheets.
+				First however, here is what my index page looked like as of the 14th of February 2025
+			</p>
+
+			<figure>
+				<img src="Images/website_14_02_2025.PNG" alt="Index page c. 14th of Feb 2025">
+				<figcaption>My index page as of the 14th of February 2025. <br>
+					<small>Screenshot taken by &copy; Luke Hirst</small>
+				</figcaption>
+			</figure>
+
+			<p>
+				The image shows that my website was quickly evolving, despite only being a week old. By the end of this tutorial, I hope that the website has some colour, and utilises Cascading Style Sheets.
+				For this tutorial, I did:
+				<ol>
+				<li>Copied and pasted a page of contents into the learning journal from the tutorial page.</li>
+				<li>Copied and pasted code for the definitions of HMTL, CSS and JavaScript into the learning journal as well.</li>
+				<li>Created my university timetable using purely HTML, complete with times, room numbers and even which lecturer for each room.</li>
+				<li>Copied and pasted a quote from W3.org, about the definition of HTML and CSS. This can be found below.</li>
+				<li>Copied and pasted code to make a image clickable, and added the HTML logo to the page.</li>	
+				</ol>
+
+				<p>Next, I followed the Cascading Style Sheets tutorial.
+					For the second half of the tutorial, I did the following:
+					<ol>
+						<li>Copied the normalize.css file from <a href="https://necolas.github.io/normalize.css/">Necolas's GitHub page</a> and linked all of my pages to the CSS file.</li>
+						<li>Copied CSS code from <a href="https://jh1033.brighton.domains/ci435/tutorials/learningJournal/stylesheet.css"> The tutorial page</a>and linked all of my pages to the file.</li>
+						<li>Stylised my website body to my specifications. I tried making the body blue, but it didn't work out.</li>
+						<li>Stylised the table, the headers, the paragraphs and the div wrapper elements to my specifications.</li>
+						<li>Stylised the mouse actions to my specifications.</li>
+						<li>Stylised the main menu to my specifications.</li>
+						<li>Stylised and tagged posts using the stylesheet.CSS file.</li>
+						<li>Validated my website on W3.org</li>
+					</ol>
+
+					<p>Here is what my website looks like now.</p>
+
+					<figure>
+						<img src="Images/website_css.PNG" alt="Index page with colour">
+						<figcaption>My index page as of the 14th of February 2025, now with colour. <br>
+							<small>Screenshot taken by &copy; Luke Hirst</small>
+						</figcaption>
+					</figure>
+
+				<p>The W3C defines HTML and CSS as follows:</p>
+
+				<blockquote>
+			
+				<p>HTML (the Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual) layout, for a variety of devices. Along with graphics and scripting, HTML and CSS are the basis of building Web pages...<p>
+			
+				<footer>
+			
+				<cite>
+				<a href="http://www.w3.org/standards/webdesign/htmlcss">W3C standards for web design</a>
+				</cite>
+			
+				</footer>
+			
+				</blockquote>
+			
+				<p>In the first 3 lab tutorials I learned some of the most frequently used HTML tags and how to use them to structure text in a web page.</p>
+
+				<p>Some useful information from this week:</p>
+				<ol>
+					<li>Cascading Style Sheets is a declarative language that is used for the presentation of HTML elements on a webpage.</li>
+					<li>CSS has been in development since 1998.</li>
+					<li>The structure of a website resides in a HTML file, wheras the presentation of a website resides in a CSS stylesheet.</li>
+					<li>href points to the specific location of a link. This can be both internal and external. An example is linking a homepage, to a contact form.</li>
+					<li>rel specifies the relationship between the web document, and the file it is linked to.</li>
+					<li>Rules consist of two parts: selectors, and declarations.</li>
+					<li>Selectors are a pattern which matches the style rule to the corresponding HTML element.</li>
+					<li>Type selectors can match any element of the specific type.</li>
+					<li>All HTML elements are children of the body element. The body element begins at the top of the document, just after the HTML tag, and ends at the bottom.</li>
+					<li>Psuedo-class selectors target the elements in different states.</li>
+				</ol>
+
+				<div class="clear"></div>
+		</article>
+
+		<article>		
+			<a id = "week1"></a>
+			<header class="posts">
+				<h3>Week 1: Creating three HTML webpages, and linking them together.</h3>
+				<p>Published <time datetime='2025-02-07'>7 February 2025</time></p>
+				</header>
+				<p>
+					The next tutorial, I began by creating the first three pages of my website. This was useful, as I could then later refer to the website during my end of semester exam.
+					First, I began by: 
+					<ol>
+					<li>Creating another index.html file, and copying a learning journal template on MyStudies.</li>
+					<li>Created a contact and tutorial HTML file, and uploaded them to Brighton Domains</li>
+					<li>Linked the three pages together, by changing the href to say the new files. <strong>Contact.html linked in tutorial html for example.</strong></li>
+					<li>Added dummy text to the index.html file</li>
+					<li>Writing my first tutorial entry into the index.html file.</li>
+					<li>Experimented with <code>h3</code> and <code>h4</code> code tags to efficiently sort out headings.</li>
+					<li>Used W3.org to validate my HTML pages, and fixed any errors flagged by the website.</li>
+					<li>Uploaded a screenshot of my file structure to Brighton Domains.</li>
+					</ol>
+
+				<figure>
+					<img src="Images/navigation.PNG" alt="The navigation code for the website.">
+					<figcaption>The Index page linked together with the other webpages.
+						<small>Screenshot taken by &copy; Luke Hirst. All rights reserved.</small>
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img src="Images/week1code.PNG" alt="Week 1's code">
+					<figcaption>The HTML code from Week 1.</figcaption>
+				</figure>
+
+				<p>Some useful information:</p>
+				<ol>
+					<li>HTML class attributes are used to identify elements that reside in the same class. Class attributes are used if the element is repeated more than once.</li>
+					<li>HTML id attributes are used to uniquely identify elements. They can only be explicitly once.</li>
+					<li>The most common elements used on websites from HMTL5 are: nav, header, footer and main</li>
+					<li>HTML allows for text to be accessed through web links, such as interlinking to other web pages. This is known as Hypertext.</li>
+				</ol>
+		</article>
+
+		<article>
+			<a id = "week0"></a>
+			<header class="posts">
+				<h3>Week 0: Induction tutorial for Web Development</h3>
+				<p>Published <time datetime='2025-02-03'>3 February 2025</time></p>
+			</header>
+				<p>I began by following the induction tutorial on MyStudies to create a "test" website. I had to:</p>
+					<ol>
+					<li>Make a index.html file inside of Visual Studio Code, and copy code from an example on MyStudies. </li>
+					<li>Make a file directly on Brighton Domains as a little test, to see if that worked too</li>
+					<li>Remove all test files from Brighton Domains, ready for my next tutorial.</li>
+					</ol>
+
+					<figure>
+						<img src="Images/file_structure.PNG" alt="Brighton Domains with the new folder structure">
+						<figcaption>My Brighton Domains web server configured for future tutorials. <br>
+							<small>Screenshot taken by &copy; Luke Hirst</small>
+						</figcaption>
+					</figure>
+
+					<figure>
+						<img src="Images/week0code.PNG" alt="Week 0 HTML code">
+						<figcaption>Week 0's HTML code that I added in.</figcaption>
+					</figure>
+
+					<p>Some useful information:</p>
+					<ol>
+						<li>The World Wide Web was invented in 1989 by Sir Tim Berners-Lee, who is a British scientist</li>
+						<li>In 1993, the early internet had different competing standards. Some browsers used different standards over others, which led to users being
+							forced to download new browsers just to navigate different websites.
+						</li>
+						<li>In 1994, a solution was found to this problem: The World Wide Web Consortium was developed, which mandated that developers needed to have a
+							unified system of accessing websites, thereby ending the need for multiple browsers.
+						</li>
+						<li>HTML is a programming language that is written for both users and browsers</li>
+						<li>HTML as a language contains syntax and semantics</li>
+						<li>HTML syntax consists of tags that are usually lowercase</li>
+						<li>HTML semantics consists of tags that are marked up in a meaningful way. For example, the p element is a semantic.
+						<li>HTML markup specifies the structure of a web content in a meaningful way</li>
+						<li>Cascading Style Sheets (or CSS) is how web browsers displays content, on a website. They are also used for accessibility purposes. One example of this
+							is making font larger, changing font colour or changing the font size.
+						</li>
+					</ol>
+		</article>
+
+			<ol>
+				<li>Tutorial 1
+				  <ul>
+						<li>Set up site folder</li>
+						   <li>Create index.html</li>
+						<li>Create guide.html</li>
+						<li>Link files in a lists for navigation</li>
+				</ul>
+				</li>
+				<li>Tutorial 2
+				  <ul>
+						<li>Add posts and date</li>
+						<li>Add named anchors</li>
+				  </ul>
+			   </li>
+			</ol>
+
+			<dl>
+				<dt><strong>HTML</strong></dt>
+				  <dd>Hyper-text markup language - markup language used to structure content</dd>
+				<dt><strong>CSS</strong></dt>
+				  <dd>Cascading stylesheets - used to define presentation of HTML elements</dd>
+				<dt><strong>JavaScript</strong></dt>
+				  <dd>Scripting language for adding interactive behaviour to web pages</dd>
+			  </dl>
+
+		<div class="fltlt">
+		<a href="http://www.w3.org/html/logo/">
+	
+		<img src="Images/HTML5_Logo_512.png" alt="HTML5 logo"></a>
+		</div>
+
+		<p>The W3C has made an HTML5 logo that you can add to your web page. The HTML5 logo is licensed under Creative Commons Attribution 4.0 — so it is free to use.</p>
+
+		<p class="clear"><a href="#top">Go to the top of the page</a></p>
+           
+    </main><!--Close main page content -->
+	
+	<aside>
+		<h2>References</h2>
+            
+		<ol>
+			<li>During the course of Web Development, I constructed a HTML website that could later be used in the exam in May. I validated the website as early as possible, to ensure that any errors
+				that appeared were quickly squashed. I used an online validator to help me validate the site, both in HTML, and in CSS.
+			</li>
+			<li>I used examples of the lecturer's website to help morph my website into the optimal design. I also used to help me with any issues that I may have encountered along the way.</li>
+			<li>I downloaded the standardised version of CSS from GitHub, which the lecturer in my lecture provided for us to download.</li>
+			<li>I used a font from Google to make the website appear more unique. I chose a font that not only looked appealing, but also one that was not straining on the eyes.</li>
+			<li>I drew a website icon in a website that the lecturer provided in one of the tutorials. I drew my initials. This made the website stand out a bit more, and made it less bland and dull.</li>
+			<li>I checked to see if certain HTML elements were compatible with various browsers, and decided to use the majority that worked in order for it to work properly.</li>
+		</ol>
+	</aside>
+ 
+	<footer>
+		<a href="mailto:l.hirst3@uni.brighton.ac.uk">Email Luke Hirst</a>
+		<!--Footer content -->
+		<small>&copy; 2025, Luke Hirst.</small>
+	</footer>
+
+	</div><!--Close 'wrapper' div -->
+</body><!--Close 'body' -->
+</html><!--Close 'html' -->
