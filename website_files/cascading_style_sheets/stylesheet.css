@@ -193,6 +193,25 @@ img {
         background: #dae0ef;
     }
 }
+
+/*
+* These can be changed if necessary, they are only here for now.
+*/
+.buttons {
+    width: 10em;
+    height: 2.5em;
+    background-color: blue;
+    border: 2px solid gold;
+    border-radius: 10px;
+    font-weight: italic;
+    color: black;
+    cursor: pointer;
+}
+
+.buttons:hover {
+    background-color: green;
+    transition: 05.s;
+}
 /*headings------------------------------------------------------------------- */
 h1	{
     font-family: Verdana, "Oswald", Geneva, Tahoma, sans-serif;
@@ -345,4 +364,34 @@ a:link, a:visited, a:active	{
 a:hover {
     color: #004857;
     text-decoration: none;
+}
+/*FadeInNotification--------------------- */
+@keyframes notificationFadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.notification.wrap {
+    background: blue; /* For now, can be changed :) */
+    color: green;
+    display: flex;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+
+    animation: fadein 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+.notification.inner {
+    background: #999;
+    border: 1px dashed #ddd;
+    margin: auto;
+    max-width: 320px;
+    text-align: center;
 }
