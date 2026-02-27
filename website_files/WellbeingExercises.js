@@ -2,7 +2,7 @@
 // UniBeing - Guided Wellbeing Exercises
 // ================================================================
 
-const exercises = [
+const wellbeingExercises = [
 
   // ---- BREATHING EXERCISES ------------------------------------
   {
@@ -131,21 +131,4 @@ const exercises = [
 
 ];
 
-// ---- Categories ----------------------------------------------
-const exerciseCategories = {
-  breathing: {
-    label: "Breathing Exercises",
-    emoji: "🌬️",
-    colour: "#c8e6f5"
-  },
-  grounding: {
-    label: "Grounding Techniques",
-    emoji: "🌿",
-    colour: "#c8f5d8"
-  },
-  activity: {
-    label: "Quick Activities",
-    emoji: "🧘",
-    colour: "#e8d5f5"
-  }
-};
+// wellbeingExercises array is available globally
