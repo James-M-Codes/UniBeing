@@ -127,7 +127,7 @@ const wellbeingExercises = [
       "Take 3 final deep breaths and enjoy the feeling of full relaxation."
     ],
     tip: "Notice the contrast between tension and relaxation — that's where the relief comes from."
-  }
+  },
 
 
   // ---- MINDFULNESS EXERCISES ----------------------------------
@@ -494,3 +494,4 @@ const wellbeingExercises = [
 
 // wellbeingExercises array is available globally
 
+// ---- APPENDED EXERCISES ----
