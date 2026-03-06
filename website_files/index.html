@@ -554,6 +554,7 @@
         <div class="chat-input-area">
           <label for="user-input" class="sr-only">Type your message</label>
           <input type="text" id="user-input" placeholder="Type how you're feeling..." aria-label="Type your message">
+          <button id='speech-btn' onclick="speakText()" aria-label="Read speech aloud">Read Speech 🔊</button>
           <button id="send-btn" onclick="sendMessage()" aria-label="Send message">Send ➤</button>
         </div>
       </div>
@@ -612,6 +613,8 @@
   <script src="affirmations.js"></script>
   <script src="WellbeingExercises.js"></script>
   <script src="centralHub.js"></script>
+  <script src="badgeSystem.js"></script>
+  <script src="TextToSpeech.js"></script>
 
   <script>
     // ---- DYSLEXIA TOGGLE --------------------------------
@@ -722,8 +725,13 @@
       // =====================================================
       // 🔊 TEXT-TO-SPEECH — LUKE TO IMPLEMENT HERE (Week 4)
       // Add a speaker button to botDiv that calls speakText()
+<<<<<<< HEAD
+
+      // I've made a new file called TextToSpeech.js, and I have made a new button, now, the only problem is that it does not play the text, so I need to work out where it comes from.
+=======
       // speakText() should use the SpeechSynthesis API
       // Example: botDiv.innerHTML += '<button onclick="speakText(...)">🔊</button>'
+>>>>>>> 57f7ab90c13ed49ee6515d11924b14d6e6363f27
       // =====================================================
       chatBox.appendChild(botDiv);
       chatBox.scrollTop = chatBox.scrollHeight;
