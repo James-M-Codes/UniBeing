@@ -37,3 +37,9 @@ ul {
     font-size: 19px;
 }
 
+*:disabled {
+    background-color: grey;
+    color: linen;
+    opacity: 0.5;
+}
+
