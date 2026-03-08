@@ -784,6 +784,8 @@
       botButton.innerHTML = "🔊";
 
       botDiv.append(botButton);
+
+      botButton.addEventListener('click', speakText);
       // =====================================================
       chatBox.appendChild(botDiv);
       chatBox.scrollTop = chatBox.scrollHeight;
