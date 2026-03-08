@@ -33,8 +33,11 @@ function awardBadge()
 
         if (numOfVisits >= 1) // Ready to award the Day1 Badge
         {
-            document.querySelector("badgeDay1").disabled = false;
-            unlockedDay1Badge = true;
+            if (Image.disabled)
+            {    
+                document.querySelector("badgeDay1").disabled = false;
+                unlockedDay1Badge = true;
+            }
         }
     }
 }

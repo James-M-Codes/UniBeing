@@ -779,7 +779,11 @@
       // speakText() should use the SpeechSynthesis API
       // Example: botDiv.innerHTML += '<button onclick="speakText(...)">🔊</button>'
 
-      botDiv.innerHTML += '<button onclick="speakText(...)">🔊</button>'
+      let botButton = document.createElement('button');
+
+      botButton.innerHTML = "🔊";
+
+      botDiv.append(botButton);
       // =====================================================
       chatBox.appendChild(botDiv);
       chatBox.scrollTop = chatBox.scrollHeight;

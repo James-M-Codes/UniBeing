@@ -1,7 +1,12 @@
+window.addEventListener("load", function()
+{
+  let botButtonClick = this.document.querySelector('botButton');
+  botButtonClick.addEventListener('click', speakText);
+});
+
 function speakText() {
   // Create a SpeechSynthesisUtterance
-  const speechText = document.querySelector('#chat-message bot-message');
-  const utterance = new SpeechSynthesisUtterance(speechText.value);
+  const utterance = new SpeechSynthesisUtterance("Hello there!");
 
   // Select a voice
   const voices = speechSynthesis.getVoices();
