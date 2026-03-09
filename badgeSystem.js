@@ -2,22 +2,42 @@
  * UniBeing - The Badge Award System
  */
 
-// Has Level 0 been achieved?
-if (Level0.hasBeenAchieved)
-{
-    awardBadge();
-}
+// Booleans for checking badges
+let badgesUnlocked = false;
+let unlockedDay1Badge = false;
+let unlockedDay7Badge = false;
+let unlockedDay14Badge = false;
+let unlockedDay21Badge = false;
 
-if (Level1.hasBeenAchieved)
+let hasVisitedSite = false;
+
+function streakCheck()
 {
-    awardBadge();
+
 }
 
 function awardBadge()
 {
-    switch (badge)
+    if (!hasVisitedSite)
     {
-        case "Level0":
-            // Enable badge
+        let numOfVisits = localStorage.getItem("numOfVisits");
+
+            if (!numOfVisits)
+            {
+                numOfVisits = 0;
+            }
+        numOfVisits += 1;
+        hasVisitedSite = true;
+
+        localStorage.setItem("numOfVisits", numOfVisits);
+
+        if (numOfVisits >= 1) // Ready to award the Day1 Badge
+        {
+            if (Image.disabled)
+            {    
+                document.querySelector("badgeDay1").disabled = false;
+                unlockedDay1Badge = true;
+            }
+        }
     }
 }

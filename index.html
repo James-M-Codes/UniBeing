@@ -7,6 +7,7 @@
   <title>UniBeing — Your Student Wellbeing Companion</title>
   <link href="cascading_style_sheets/normalize.css" rel="stylesheet">
   <link href="cascading_style_sheets/stylesheet.css" rel="stylesheet">
+  <link href="cascading_style_sheets/badgeSystem.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -598,6 +599,56 @@
       <p id="streak-display">Check in daily to build your streak!</p>
       <h3 style="margin-top:1em;">🏅 Badges</h3>
       <p id="badge-display">Keep using UniBeing to earn badges!</p>
+
+    <!-- Badge System-->
+     <div class="unibeingBadgeHolder">
+      <h2 class="unibeingBadges">All UniBeing badges</h2>
+      </div>
+      <div class>
+        <ul class="uniBeingBadgesSide">
+          <li class="uniBeingDay1"></li>
+          <div class="unibeingBadgeHolder"></div>
+          <div class="unibeingBadgeGap"></div>
+          <div class="unibeingBadgeInformation">
+            <div class="day1">
+              <h3>First Day on UniBeing</h3>
+              <input type="image" name="UniBeingDay1Badge" id="badgeDay1" src="images/Day1Badge.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Log onto UniBeing for the first time.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+          </div>
+          <li class="uniBeingDay7"></li>
+            <div class="unibeingBadgeHolder"></div>
+          <div class="unibeingBadgeGap"></div>
+          <div class="unibeingBadgeInformation">
+            <div class="day7">
+              <h3>First week on UniBeing</h3>
+               <input type="image" src="images/Day7Badge.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Log onto UniBeing for seven consecutive days.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+          <li class="uniBeingDay14"></li>
+            <div class="unibeingBadgeHolder"></div>
+          <div class="unibeingBadgeGap"></div>
+          <div class="unibeingBadgeInformation">
+            <div class="day14">
+              <h3>Two weeks on UniBeing</h3>
+              <input type="image" id="uniBeingDay1" src="images/Day14Badge.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Log onto UniBeing for fourteen consecutive days.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+          <li class="uniBeingDay21"></li>
+            <div class="unibeingBadgeHolder"></div>
+          <div class="unibeingBadgeGap"></div>
+          <div class="unibeingBadgeInformation">
+            <div class="day21">
+              <h3>Frequent Visitor</h3>
+              <input type="image" src="images/Day21Badge.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Log onto UniBeing for 21 consecutive days.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+        </ul>
+      </div>
     </aside>
 
     <!-- FOOTER -->
@@ -728,7 +779,13 @@
       // speakText() should use the SpeechSynthesis API
       // Example: botDiv.innerHTML += '<button onclick="speakText(...)">🔊</button>'
 
-      botDiv.innerHTML += '<button onclick="speakText(...)">🔊</button>'
+      let botButton = document.createElement('button');
+
+      botButton.innerHTML = "🔊";
+
+      botDiv.append(botButton);
+
+      botButton.addEventListener('click', speakText);
       // =====================================================
       chatBox.appendChild(botDiv);
       chatBox.scrollTop = chatBox.scrollHeight;

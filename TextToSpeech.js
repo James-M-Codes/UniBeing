@@ -1,11 +1,12 @@
+window.addEventListener("load", function()
+{
+  console.log("Button found! And I can click it!")
+});
+
 function speakText() {
   // Create a SpeechSynthesisUtterance
-  const speechText = document.querySelector('#chat-message bot-message');
-  const utterance = new SpeechSynthesisUtterance(speechText.value);
-
-  // Select a voice
-  const voices = speechSynthesis.getVoices();
-  utterance.voice = voices[0]; // Choose a specific voice
+  let speechText = document.querySelector('.bot-message:last-child');
+  const utterance = new SpeechSynthesisUtterance(speechText);
 
   // Speak the text
   speechSynthesis.speak(utterance);
