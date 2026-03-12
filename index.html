@@ -775,7 +775,12 @@
       chatBox.appendChild(userDiv);
       // Bot bubble
       const botDiv = document.createElement('div');
-      botDiv.classList.add('chat-message', 'bot-message', getTopicClass(userMsg));
+      botDiv.classList.add('chat-message', 'bot-message');
+           if (checkCrisis(userMsg.toLowerCase().trim())) {
+  botDiv.classList.add('bot-crisis');
+} else {
+      botDiv.classList.add(getTopicClass(userMsg));
+      }
       botDiv.innerHTML = `<strong>BeingBot:</strong> ${getBotResponse(userMsg)}`;
       // =====================================================
       // 🔊 TEXT-TO-SPEECH — LUKE TO IMPLEMENT HERE (Week 4)
