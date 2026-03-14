@@ -6,8 +6,17 @@ window.addEventListener("load", function()
 
 function speakText(sEvent) {
   // Create a SpeechSynthesisUtterance
+  const voices = speechSynthesis.getVoices();
   let speechText = sEvent.currentTarget.closest('.bot-message').innerText;
   const utterance = new SpeechSynthesisUtterance(speechText);
+  const selectedOption = voiceSelect.selectedOptions[0].getAttribute("data-name");
+  for (const voice of voices)
+  {
+    if (voice.name === selectedOption)
+    {
+      utterance.voice = voice;
+    }
+  }
 
   // Speak the text
   speechSynthesis.speak(utterance);
@@ -34,13 +43,10 @@ function populateVoices()
 
     option.setAttribute("data-lang", voice.lang);
     option.setAttribute('data-name', voice.name);
-    document.getElementById("voiceSelector").appendChild(option);
+    document.getElementById("voiceSelect").appendChild(option);
   }
-
-  populateVoices();
-
+}
   if (typeof speechSynthesis !== "undefined" && speechSynthesis.onvoiceschanged !== "undefined")
   {
     speechSynthesis.onvoiceschanged = populateVoices;
   }
-}
