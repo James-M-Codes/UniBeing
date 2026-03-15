@@ -1,4 +1,4 @@
-Progression.js
+
 //------------progression system-------------
 function calculateLevel(points){
     if (points >= 1000) {
