@@ -781,10 +781,10 @@
     function renderMoodHistory() {
       const raw = JSON.parse(localStorage.getItem('moodHistory') || '[]');
       const container = document.getElementById('mood-history');
-      if (raw.length === 0) { container.setHTML(''); return; }
+      if (raw.length === 0) { container.innerHTML = ''; return; }
       const valid = raw.filter(entry => typeof entry === 'object' && entry.mood);
-      container.setHTML('<strong>Recent moods:</strong> ' +
-        valid.map(entry => `<span title="${entry.date} ${entry.time}">${entry.emoji} ${entry.mood}</span>`).join(''));
+      container.innerHTML = '<strong>Recent moods:</strong> ' +
+        valid.map(entry => `<span title="${entry.date} ${entry.time}">${entry.emoji} ${entry.mood}</span>`).join('');
     }
     renderMoodHistory();
 
@@ -824,7 +824,7 @@
       // User bubble
       const userDiv = document.createElement('div');
       userDiv.classList.add('chat-message', 'user-message');
-      userDiv.setHTML(`<strong>You:</strong> ${userMsg}`);
+      userDiv.innerHTML = `<strong>You:</strong> ${userMsg}`;
       chatBox.appendChild(userDiv);
       // Bot bubble
       const botDiv = document.createElement('div');
@@ -834,7 +834,7 @@
 } else {
       botDiv.classList.add(getTopicClass(userMsg));
       }
-      botDiv.setHTML(`<strong>BeingBot:</strong> ${getBotResponse(userMsg)}`);
+      botDiv.innerHTML = `<strong>BeingBot:</strong> ${getBotResponse(userMsg)}`;
       // =====================================================
       // 🔊 TEXT-TO-SPEECH — LUKE TO IMPLEMENT HERE (Week 4)
       // Add a speaker button to botDiv that calls speakText()
@@ -844,7 +844,7 @@
 
       let botButton = document.createElement('button');
 
-      botButton.setHTML("🔊");
+      botButton.innerHTML = "🔊";
 
       botDiv.append(botButton);
 
@@ -869,7 +869,7 @@
     function renderExercises() {
       if (typeof wellbeingExercises === 'undefined') return;
       const container = document.getElementById('exercises-container');
-      container.setHTML('');
+      container.innerHTML = '';
      const cats = {
        breathing:   { label: 'Breathing Exercises 🌬️',    css: 'breathing' },
        grounding:   { label: 'Grounding Techniques 🌿',    css: 'grounding' },
@@ -885,7 +885,7 @@
         if (!list.length) continue;
         const catDiv = document.createElement('div');
         catDiv.classList.add('exercise-category');
-        catDiv.setHTML(`<div class="category-heading">${cat.label}</div>`);
+        catDiv.innerHTML = `<div class="category-heading">${cat.label}</div>`;
         list.forEach(ex => {
           const card = document.createElement('div');
           card.classList.add('exercise-card', cat.css);
@@ -918,7 +918,7 @@
       if (chatBox && chatBox.children.length === 0) {
         const greet = document.createElement('div');
         greet.classList.add('chat-message', 'bot-message', 'bot-greeting');
-        greet.setHTML("<strong>BeingBot:</strong> Hey there! \uD83D\uDC4B I'm BeingBot, your wellbeing companion. How are you feeling today? \uD83D\uDC99");
+        greet.innerHTML = "<strong>BeingBot:</strong> Hey there! \uD83D\uDC4B I'm BeingBot, your wellbeing companion. How are you feeling today? \uD83D\uDC99";
         chatBox.appendChild(greet);
       }
     })();
