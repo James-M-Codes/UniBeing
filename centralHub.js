@@ -235,11 +235,5 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const chatBox = document.getElementById("chat-box");
-  if (chatBox) {
-    const greetingDiv = document.createElement("div");
-    greetingDiv.classList.add("chat-message", "bot-message");
-    greetingDiv.innerHTML = `<span><strong>BeingBot:</strong> Hey there! 👋 I'm BeingBot, your wellbeing companion. How are you feeling today? 💙</span>`;
-    chatBox.appendChild(greetingDiv);
-  }
 });
+  

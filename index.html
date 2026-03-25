@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;">
   <title>UniBeing — Your Student Wellbeing Companion</title>
   <link href="cascading_style_sheets/normalize.css" rel="stylesheet">
   <link href="cascading_style_sheets/stylesheet.css" rel="stylesheet">
@@ -109,6 +110,7 @@
       .chat-input-area { padding: 0.75em !important; }
       #user-input { font-size: 0.9em !important; }
       #send-btn { padding: 0.5em 1em !important; font-size: 0.9em !important; }
+      #voiceSelect {padding: 0.5em 1em !important; font-size: 0.9em !important; }
 
       /* Exercises */
       .exercise-toggle { font-size: 0.92em !important; padding: 0.8em 1em !important; }
@@ -384,6 +386,19 @@
     }
     #send-btn:hover { opacity: 0.9; transform: translateY(-1px); }
 
+    #voiceSelect {
+      background: linear-gradient(135deg, #4ab8c1, #5b9bd5);
+      color: black;
+      border: none;
+      border-radius: 24px;
+      padding: 0.6em 1.4em;
+      font-family: 'Nunito', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.95em;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
     /* =====================================================
        EXERCISES
     ===================================================== */
@@ -407,6 +422,11 @@
     .exercise-card.breathing { border-left: 4px solid #4ab8c1; }
     .exercise-card.grounding { border-left: 4px solid #66bb6a; }
     .exercise-card.activity  { border-left: 4px solid #ab47bc; }
+    .exercise-card.mindfulness { border-left: 4px solid #5b9bd5; }
+    .exercise-card.journalling { border-left: 4px solid #f59e0b; }
+    .exercise-card.stretching  { border-left: 4px solid #ef4444; }
+    .exercise-card.gratitude   { border-left: 4px solid #f472b6; }
+    .exercise-card.relaxation  { border-left: 4px solid #8b5cf6; }  
     .exercise-toggle {
       width: 100%;
       background: none;
@@ -559,6 +579,13 @@
         </div>
       </div>
 
+      <h3>BeingBot voice selection</h3>
+      <div>
+        <div class="chat-voices" role="region" aria-label="BeingBot Voice Selection">
+        <select id="voiceSelect"></select>
+      </div>
+      </div>
+
       <!-- EXERCISES -->
       <a id="exercises"></a>
       <h2>🧘 Wellbeing Exercises</h2>
@@ -587,10 +614,13 @@
           <li><a href="https://www.studentminds.org.uk" target="_blank" rel="noopener">Student Minds</a></li>
           <li><a href="https://www.mind.org.uk" target="_blank" rel="noopener">Mind UK</a></li>
           <li><a href="https://www.nhs.uk/mental-health" target="_blank" rel="noopener">NHS Mental Health</a></li>
-          <li><a href="https://www.brighton.ac.uk/student-life/support/index.aspx" target="_blank" rel="noopener">University of Brighton Student Support</a></li>
+          <a href="https://www.brighton.ac.uk" target="_blank" rel="noopener">University of Brighton Student Support</a>
         </ul>
       </div>
 
+    <!-- NOTIFICATION SYSTEM — handled dynamically by badgeSystem.js -->
+    
+   
     </main>
 
     <!-- ASIDE -->
@@ -663,12 +693,16 @@
   </div>
 
   <!-- SCRIPTS -->
+  <script src="security.js"></script>
   <script src="quotes.js"></script>
   <script src="affirmations.js"></script>
   <script src="WellbeingExercises.js"></script>
   <script src="centralHub.js"></script>
   <script src="badgeSystem.js"></script>
   <script src="TextToSpeech.js"></script>
+  <script src="progression.js"></script>
+  <script src="streaks.js"></script>
+  
 
   <script>
     // ---- DYSLEXIA TOGGLE --------------------------------
@@ -774,7 +808,12 @@
       chatBox.appendChild(userDiv);
       // Bot bubble
       const botDiv = document.createElement('div');
-      botDiv.classList.add('chat-message', 'bot-message', getTopicClass(userMsg));
+      botDiv.classList.add('chat-message', 'bot-message');
+           if (checkCrisis(userMsg.toLowerCase().trim())) {
+  botDiv.classList.add('bot-crisis');
+} else {
+      botDiv.classList.add(getTopicClass(userMsg));
+      }
       botDiv.innerHTML = `<strong>BeingBot:</strong> ${getBotResponse(userMsg)}`;
       // =====================================================
       // 🔊 TEXT-TO-SPEECH — LUKE TO IMPLEMENT HERE (Week 4)
@@ -811,11 +850,16 @@
       if (typeof wellbeingExercises === 'undefined') return;
       const container = document.getElementById('exercises-container');
       container.innerHTML = '';
-      const cats = {
-        breathing: { label: 'Breathing Exercises \uD83C\uDF2C\uFE0F', css: 'breathing' },
-        grounding: { label: 'Grounding Techniques \uD83C\uDF3F', css: 'grounding' },
-        activity:  { label: 'Quick Activities \uD83E\uDDD8', css: 'activity' }
-      };
+     const cats = {
+       breathing:   { label: 'Breathing Exercises 🌬️',    css: 'breathing' },
+       grounding:   { label: 'Grounding Techniques 🌿',    css: 'grounding' },
+       activity:    { label: 'Quick Activities 🧘',         css: 'activity' },
+       mindfulness: { label: 'Mindfulness Practices 🧠',   css: 'mindfulness' },
+       journalling: { label: 'Journalling Exercises 📓',    css: 'journalling' },
+       stretching:  { label: 'Stretching & Movement 🤸',   css: 'stretching' },
+       gratitude:   { label: 'Gratitude Practices 🌟',      css: 'gratitude' },
+       relaxation:  { label: 'Relaxation Techniques 😌',    css: 'relaxation' },
+     };
       for (const [key, cat] of Object.entries(cats)) {
         const list = wellbeingExercises.filter(e => e.category === key);
         if (!list.length) continue;

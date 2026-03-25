@@ -370,11 +370,11 @@ tr:nth-child(even) {
 
 @media (min-width: 1000px) {
     #wrapper {
-        grid-template-columns: 1.5fr 4fr 2fr;
+        grid-template-columns: 2fr 5fr 2fr;
         grid-template-areas:
             "banner  banner  banner"
             "menu    menu    menu"
-            "aside   main    aside"
+            "aside   main    main"
             "footer  footer  footer";
     }
 }
