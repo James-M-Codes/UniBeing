@@ -1,4 +1,3 @@
-Streaks.js
 
 //-------improving data storage-------------
 const DEFAULT_USER_DATA = {
