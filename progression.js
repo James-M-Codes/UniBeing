@@ -38,7 +38,7 @@ function displayLevel() {
     const levelElement = document.getElementById('levelDisplay');
     if (!levelElement) return;
     levelElement.textContent = `Level: ${userData.level} |${userData.points} XP`;
-
+    updateProgressBar()
 }
 //-------------show progress bar--------------------
 //add this under level display <div class="progress-container"><div id="progress-bar" <div id="progress-text"></div></div>
@@ -55,7 +55,7 @@ function updateProgressBar() {
     const progress = userData.points - min;
     const totalNeeded = max - min;
     const percent = totalNeeded > 0 ? (progress / totalNeeded) * 100 : 100;
-    const bar = document.getElementById('progress-bar');
+    const bar = document.getElementById('progressBar');
     const text = document.getElementById('progress-text');
     if (bar) bar.style.width = percent + "%";
     if (text && userData.level < 5) {
@@ -74,3 +74,6 @@ function resetUserData() {
 // we can add a temp reset button in html if wanted
 //<button onclick='resetUserData()">Reset progress</button>"
 
+document.addEventListener("DOMContentLoaded", function () {
+    displayLevel()
+});
