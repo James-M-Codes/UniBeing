@@ -764,6 +764,7 @@
 
     // ---- MOOD TRACKER -----------------------------------
     function logMood(mood, emoji, e) {
+      addPoints(10);
       const now = new Date();
       const entry = {
         mood, emoji,
@@ -820,6 +821,7 @@
     }
 
     function sendMessage() {
+      addPoints(2);
       const inputField = document.getElementById('user-input');
       const chatBox    = document.getElementById('chat-box');
       const userMsg    = inputField.value.trim();

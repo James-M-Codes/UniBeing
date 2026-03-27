@@ -63,12 +63,15 @@ function updateStreak() {
 
     if (!userData.lastVisit) {
         userData.streak = 1;
+        userData.points += 5;
     } else {
         const difference = diffDaysLocal(userData.lastVisit, today);
         if (difference === 0) {
         }
         else if (difference === 1) {
             userData.streak += 1;
+            userData.points += 20;
+            saveUserData()
         }
         else if (difference > 1) {
             userData.streak = 1;
