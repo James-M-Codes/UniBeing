@@ -213,6 +213,12 @@ function sendMessage() {
 
   if (!userMessage) return;
 
+  // Rate limiting check — must be first
+  if (!rateLimiter.isAllowed()) {
+    appendMessage('bot', "⚠️ You're sending messages too quickly. Please slow down and take a breath 💙");
+    return;
+  }
+
   const userDiv = document.createElement("div");
   userDiv.classList.add("chat-message", "user-message");
   userDiv.innerHTML = `<span><strong>You:</strong> ${userMessage}</span>`;
