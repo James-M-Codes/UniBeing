@@ -22,6 +22,7 @@ function addPoints(amount) {
     userData.points += amount;
     userData.level = calculateLevel(userData.points);
     saveUserData(userData);
+    displayLevel()
     return userData.points;
 }
 function getCurrentLevel() {

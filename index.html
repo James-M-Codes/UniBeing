@@ -88,27 +88,7 @@
 
       /* Headings */
       main h2 { font-size: 1.2em !important; }
-      /*progress bar */
-      .progress-container {
-        width: 220px;
-        height: 14px;
-        background:#2d3748;
-        border-radius:8px ;
-        overflow: hidden;
-        margin:0.5em 0;
-      }
-      #progressBar {
-        height:100%;
-        width: 0%;
-        background:#4CAF50;
-        transition: width 0.4s ease;
-      }
-      #progress-text {
-        font-size: 0.9em;
-        color: #2e8f97;
-        font-weight: 600;
-        margin-top:0.3em;
-      }
+
       /* Mood buttons - wrap naturally */
       .mood-buttons { gap: 0.5em !important; }
       .mood-btn {
@@ -479,6 +459,27 @@
       color: #2e8f97;
       font-style: italic;
     }
+    /*progress bar */
+    .progress-container {
+      width: 220px;
+      height: 14px;
+      background:#2d3748;
+      border-radius:8px ;
+      overflow: hidden;
+      margin:0.5em 0;
+    }
+    #progressBar {
+      height:100%;
+      width: 0%;
+      background:#4CAF50;
+      transition: width 0.4s ease;
+    }
+    #progress-text {
+      font-size: 0.9em;
+      color: #2e8f97;
+      font-weight: 600;
+      margin-top:0.3em;
+    }
 
     /* =====================================================
        RESOURCES
@@ -701,6 +702,54 @@
             </div>
             <div class="uniBeingBadgeDescription">Log onto UniBeing for 21 consecutive days.</div>
             <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+              <li class="uniBeingFirstMood"></li>
+            <div class="unibeingBadgeHolder"></div>
+          <div class="unibeingBadgeGap"></div>
+          <div class="unibeingBadgeInformation">
+            <div class="firstMood">
+              <h3>Mood Tracker</h3>
+              <input type="image" src="images/FirstMood.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Log a mood for the first time.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+              <li class="uniBeingMoodMaster"></li>
+            <div class="unibeingBadgeHolder"></div>
+          <div class="unibeingBadgeGap"></div>
+          <div class="unibeingBadgeInformation">
+            <div class="moodMaster">
+              <h3>Mood Master</h3>
+              <input type="image" src="images/MoodMaster.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Log a mood for five consecutive days in a row.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+              <div class="unibeingBadgeInformation">
+            <div class="firstChat">
+              <h3>First Chat</h3>
+              <input type="image" src="images/FirstChat.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Chat with BeingBot once.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+              <div class="unibeingBadgeInformation">
+            <div class="chatMaster">
+              <h3>BeingBot Friend</h3>
+              <input type="image" src="images/MasterChatter.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Chat with BeingBot five times.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+              <div class="unibeingBadgeInformation">
+            <div class="wellbeingExplore">
+              <h3>Wellbeing Explorer</h3>
+              <input type="image" src="images/WellBeingStarter.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Open a wellbeing exercise for the first time.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
+              <div class="unibeingBadgeInformation">
+            <div class="wellbeingMaster">
+              <h3>Wellbeing Champion</h3>
+              <input type="image" src="images/WellBeingMaster.png" disabled>
+            </div>
+            <div class="uniBeingBadgeDescription">Complete five wellbeing exercises.</div>
+            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
         </ul>
       </div>
     </aside>
@@ -721,8 +770,9 @@
   <script src="centralHub.js"></script>
   <script src="badgeSystem.js"></script>
   <script src="TextToSpeech.js"></script>
-  <script src="progression.js"></script>
   <script src="streaks.js"></script>
+  <script src="progression.js"></script>
+
   
 
   <script>
@@ -762,6 +812,7 @@
 
     // ---- MOOD TRACKER -----------------------------------
     function logMood(mood, emoji, e) {
+      addPoints(10);
       const now = new Date();
       const entry = {
         mood, emoji,
@@ -818,6 +869,7 @@
     }
 
     function sendMessage() {
+      addPoints(2);
       const inputField = document.getElementById('user-input');
       const chatBox    = document.getElementById('chat-box');
       const userMsg    = inputField.value.trim();
