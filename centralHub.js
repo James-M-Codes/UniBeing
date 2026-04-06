@@ -226,7 +226,7 @@ function sendMessage() {
 
   const botDiv = document.createElement("div");
   botDiv.classList.add("chat-message", "bot-message");
-  botDiv.innerHTML = `<span><strong>BeingBot:</strong> ${getBotResponse(userMessage)}</span>`;
+  botDiv.innerHTML = `<span><strong>BeingBot:</strong> ${sanitizeInput(getBotResponse(userMessage))}</span>`;
   chatBox.appendChild(botDiv);
 
   chatBox.scrollTop = chatBox.scrollHeight;
