@@ -877,7 +877,7 @@
       // User bubble
       const userDiv = document.createElement('div');
       userDiv.classList.add('chat-message', 'user-message');
-      userDiv.innerHTML = `<strong>You:</strong> ${userMsg}`;
+      userDiv.innerHTML = `<strong>You:</strong> ${sanitizeInput(userMsg)}`;
       chatBox.appendChild(userDiv);
       // Bot bubble
       const botDiv = document.createElement('div');
