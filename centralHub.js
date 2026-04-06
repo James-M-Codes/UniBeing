@@ -221,7 +221,7 @@ function sendMessage() {
 
   const userDiv = document.createElement("div");
   userDiv.classList.add("chat-message", "user-message");
-  userDiv.innerHTML = `<span><strong>You:</strong> ${userMessage}</span>`;
+  userDiv.innerHTML = `<span><strong>You:</strong> ${sanitizeInput(userMessage)}</span>`;
   chatBox.appendChild(userDiv);
 
   const botDiv = document.createElement("div");
