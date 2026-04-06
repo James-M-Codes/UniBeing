@@ -887,7 +887,7 @@
 } else {
       botDiv.classList.add(getTopicClass(userMsg));
       }
-      botDiv.innerHTML = `<strong>BeingBot:</strong> ${getBotResponse(userMsg)}`;
+      botDiv.innerHTML = `<strong>BeingBot:</strong> ${sanitizeInput(getBotResponse(userMsg))}`;
       // =====================================================
       // 🔊 TEXT-TO-SPEECH — LUKE TO IMPLEMENT HERE (Week 4)
       // Add a speaker button to botDiv that calls speakText()
