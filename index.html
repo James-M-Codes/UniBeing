@@ -874,6 +874,15 @@
       const chatBox    = document.getElementById('chat-box');
       const userMsg    = inputField.value.trim();
       if (!userMsg) return;
+
+// Rate limiting check — must be first
+if (!rateLimiter.isAllowed()) {
+  const botDiv = document.createElement('div');
+  botDiv.classList.add('chat-message', 'bot-message', 'bot-general');
+  botDiv.innerHTML = `<strong>BeingBot:</strong> ⚠️ You're sending messages too quickly. Please slow down and take a breath 💙`;
+  document.getElementById('chat-box').appendChild(botDiv);
+  return;
+}
       // User bubble
       const userDiv = document.createElement('div');
       userDiv.classList.add('chat-message', 'user-message');
