@@ -334,15 +334,14 @@
     .bot-greeting  { background: #ffffff; border: 1px solid #c9e4ea; }
     .bot-crisis    { background: #ffe0e0; border: 2px solid #e05050; }
 
-     .quick-buttons {
-       display: flex;
-       flex-wrap: wrap;
-       justify-content: center;
-       gap: 0.5em;
-       padding: 0.75em 1.2em;
-       background: #f0f7f9;
-       border-top: 1px solid #c9e4ea;
-    }
+    .quick-buttons {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.5em;
+      padding: 0.75em 1.2em;
+      background: #f0f7f9;
+      border-top: 1px solid #c9e4ea;
+  }
     
     .quick-btn {
       background: white;
@@ -596,7 +595,8 @@
           <button class="quick-btn" onclick="quickSend('I feel sad')">😢 Low Mood</button>
           <button class="quick-btn" onclick="quickSend('I feel lonely')">😔 Loneliness</button>
           <button class="quick-btn" onclick="quickSend('I cannot sleep')">😴 Sleep</button>
-          <button class="quick-btn quick-btnoffset" onclick="quickSend('I need motivation')">💪 Motivation</button>
+          <div></div>
+          <button class="quick-btn" onclick="quickSend('I need motivation')">💪 Motivation</button>
           <button class="quick-btn" onclick="quickSend('I need tips')">💡 Tips</button>
           <button class="quick-btn" onclick="quickSend('Give me a quote')">💬 Quote</button>
           <button class="quick-btn" onclick="quickSend('breathing exercise')">🌬️ Breathe</button>
