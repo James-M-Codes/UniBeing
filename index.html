@@ -334,14 +334,16 @@
     .bot-greeting  { background: #ffffff; border: 1px solid #c9e4ea; }
     .bot-crisis    { background: #ffe0e0; border: 2px solid #e05050; }
 
-    .quick-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5em;
-      padding: 0.75em 1.2em;
-      background: #f0f7f9;
-      border-top: 1px solid #c9e4ea;
+     .quick-buttons {
+       display: grid;
+       grid-template-columns: repeat(5, auto);
+       justify-content: center;
+       gap: 0.5em;
+       padding: 0.75em 1.2em;
+       background: #f0f7f9;
+       border-top: 1px solid #c9e4ea;
     }
+    
     .quick-btn {
       background: white;
       border: 2px solid #a8dde2;
