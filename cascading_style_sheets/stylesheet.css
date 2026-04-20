@@ -140,6 +140,7 @@ aside {
     border-radius: var(--radius);
     padding: 1.5em;
     border: 1px solid var(--border);
+    align-self: start;
 }
 
 /* Footer --------------------------------------------------------- */
