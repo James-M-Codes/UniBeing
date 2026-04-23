@@ -25,7 +25,7 @@ const quotes = [
     " The secret of getting ahead is getting started.",
     " It does not matter how slowly you go as long as you do not stop.",
     " Believe you can and you're halfway there.",
-    " Work hard in silence, let sucess be your noise.",
+    " Work hard in silence, let success be your noise.",
     " If you fell down yesterday, stand up today.",
     " If you can dream it, you can do it.",
     " Your journey is unique- embrace it.",
