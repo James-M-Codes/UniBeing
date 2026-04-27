@@ -172,7 +172,13 @@ const badgeImages = {
   badgeDay1:  "images/Day1Badge.png",
   badgeDay7:  "images/Day7Badge.png",
   badgeDay14: "images/Day14Badge.png",
-  badgeDay21: "images/Day21Badge.png"
+  badgeDay21: "images/Day21Badge.png",
+  badgeMood1: "images/FirstMood.png",
+  badgeMood7: "images/MoodMaster.png",
+  badgeChat1: "images/FirstChat.png",
+  badgeChat5: "images/MasterChatter.png",
+  badgeExercise1: "images/WellbeingStarter.png",
+  badgeExercise5: "images/WellbeingMaster.png"
 };
 
 function renderBadges() {

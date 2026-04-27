@@ -22,6 +22,7 @@
       list-style: none;
       padding: 0.75em;
       margin: 0;
+      align-items: stretch;
     }
     .menu li { margin: 0; }
     .menu a {
@@ -37,6 +38,7 @@
       text-align: center;
       transition: transform 0.2s, box-shadow 0.2s;
       line-height: 1.3;
+      height: 100%;
     }
     .menu a:hover {
       transform: translateY(-2px);
@@ -90,7 +92,10 @@
       main h2 { font-size: 1.2em !important; }
 
       /* Mood buttons - wrap naturally */
-      .mood-buttons { gap: 0.5em !important; }
+      .mood-buttons {
+        grid-template-columns: repeat(2, 1fr) !important; 
+        gap: 0.5em !important; 
+      }
       .mood-btn {
         padding: 0.5em 0.8em !important;
         font-size: 1.3em !important;
@@ -110,7 +115,7 @@
       .chat-input-area { padding: 0.75em !important; }
       #user-input { font-size: 0.9em !important; }
       #send-btn { padding: 0.5em 1em !important; font-size: 0.9em !important; }
-      #voiceSelect {padding: 0.5em 1em !important; font-size: 0.9em !important; }
+      #voiceSelect {padding: 0.5em 1em !important; font-size: 0.9em !important; max-width: 90%}
 
       /* Exercises */
       .exercise-toggle { font-size: 0.92em !important; padding: 0.8em 1em !important; }
@@ -296,14 +301,15 @@
     .chat-header p  { color: rgba(255,255,255,0.85); margin: 0; font-size: 0.8em; }
 
     #chat-box {
-      height: 340px;
-      overflow-y: auto;
-      padding: 1.2em;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75em;
-      background: #f0f7f9;
-    }
+    min-height: 200px;
+    max-height: 340px;
+    overflow-y: auto;
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    background: #f0f7f9;
+  }
     .chat-message {
       max-width: 80%;
       padding: 0.7em 1em;
@@ -333,13 +339,14 @@
     .bot-crisis    { background: #ffe0e0; border: 2px solid #e05050; }
 
     .quick-buttons {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 0.5em;
       padding: 0.75em 1.2em;
       background: #f0f7f9;
       border-top: 1px solid #c9e4ea;
-    }
+  }
+    
     .quick-btn {
       background: white;
       border: 2px solid #a8dde2;
@@ -353,6 +360,10 @@
       transition: all 0.2s;
     }
     .quick-btn:hover { background: #4ab8c1; color: white; border-color: #4ab8c1; }
+
+    .quick-btn-offset {
+  margin-left: 1.2em;
+}
     .chat-input-area {
       display: flex;
       gap: 0.5em;
@@ -655,58 +666,9 @@
         <div id="progressBar"></div>
       </div>
       <div id="progress-text"></div>
-      <!-- Badge System-->
-     <div class="unibeingBadgeHolder">
-      <h2 class="unibeingBadges">All UniBeing badges</h2>
-      </div>
-      <div class>
-        <ul class="uniBeingBadgesSide">
-          <li class="uniBeingDay1"></li>
-          <div class="unibeingBadgeHolder"></div>
-          <div class="unibeingBadgeGap"></div>
-          <div class="unibeingBadgeInformation">
-            <div class="day1">
-              <h3>First Day on UniBeing</h3>
-              <input type="image" name="UniBeingDay1Badge" id="badgeDay1" src="images/Day1Badge.png" disabled>
-            </div>
-            <div class="uniBeingBadgeDescription">Log onto UniBeing for the first time.</div>
-            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
-          </div>
-          <li class="uniBeingDay7"></li>
-            <div class="unibeingBadgeHolder"></div>
-          <div class="unibeingBadgeGap"></div>
-          <div class="unibeingBadgeInformation">
-            <div class="day7">
-              <h3>First week on UniBeing</h3>
-               <input type="image" src="images/Day7Badge.png" disabled>
-            </div>
-            <div class="uniBeingBadgeDescription">Log onto UniBeing for seven consecutive days.</div>
-            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
-          <li class="uniBeingDay14"></li>
-            <div class="unibeingBadgeHolder"></div>
-          <div class="unibeingBadgeGap"></div>
-          <div class="unibeingBadgeInformation">
-            <div class="day14">
-              <h3>Two weeks on UniBeing</h3>
-              <input type="image" id="uniBeingDay1" src="images/Day14Badge.png" disabled>
-            </div>
-            <div class="uniBeingBadgeDescription">Log onto UniBeing for fourteen consecutive days.</div>
-            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
-          <li class="uniBeingDay21"></li>
-            <div class="unibeingBadgeHolder"></div>
-          <div class="unibeingBadgeGap"></div>
-          <div class="unibeingBadgeInformation">
-            <div class="day21">
-              <h3>Frequent Visitor</h3>
-              <input type="image" src="images/Day21Badge.png" disabled>
-            </div>
-            <div class="uniBeingBadgeDescription">Log onto UniBeing for 21 consecutive days.</div>
-            <div class="uniBeingBadgeAwardDate">Unlocked on: N/A</div>
-        </ul>
-      </div>
     </aside>
 
-    <!-- FOOTER -->
+      <!-- FOOTER -->
     <footer role="contentinfo">
       <small>&copy; 2026, UniBeing — University of Brighton.</small>
     </footer>
@@ -826,10 +788,19 @@
       const chatBox    = document.getElementById('chat-box');
       const userMsg    = inputField.value.trim();
       if (!userMsg) return;
+
+// Rate limiting check — must be first
+if (!rateLimiter.isAllowed()) {
+  const botDiv = document.createElement('div');
+  botDiv.classList.add('chat-message', 'bot-message', 'bot-general');
+  botDiv.innerHTML = `<strong>BeingBot:</strong> ⚠️ You're sending messages too quickly. Please slow down and take a breath 💙`;
+  document.getElementById('chat-box').appendChild(botDiv);
+  return;
+}
       // User bubble
       const userDiv = document.createElement('div');
       userDiv.classList.add('chat-message', 'user-message');
-      userDiv.innerHTML = `<strong>You:</strong> ${userMsg}`;
+      userDiv.innerHTML = `<strong>You:</strong> ${sanitizeInput(userMsg)}`;
       chatBox.appendChild(userDiv);
       // Bot bubble
       const botDiv = document.createElement('div');
@@ -839,7 +810,7 @@
 } else {
       botDiv.classList.add(getTopicClass(userMsg));
       }
-      botDiv.innerHTML = `<strong>BeingBot:</strong> ${getBotResponse(userMsg)}`;
+      botDiv.innerHTML = `<strong>BeingBot:</strong> ${sanitizeInput(getBotResponse(userMsg))}`;
       // =====================================================
       // 🔊 TEXT-TO-SPEECH — LUKE TO IMPLEMENT HERE (Week 4)
       // Add a speaker button to botDiv that calls speakText()

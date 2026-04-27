@@ -213,14 +213,20 @@ function sendMessage() {
 
   if (!userMessage) return;
 
+  // Rate limiting check — must be first
+  if (!rateLimiter.isAllowed()) {
+    appendMessage('bot', "⚠️ You're sending messages too quickly. Please slow down and take a breath 💙");
+    return;
+  }
+
   const userDiv = document.createElement("div");
   userDiv.classList.add("chat-message", "user-message");
-  userDiv.innerHTML = `<span><strong>You:</strong> ${userMessage}</span>`;
+  userDiv.innerHTML = `<span><strong>You:</strong> ${sanitizeInput(userMessage)}</span>`;
   chatBox.appendChild(userDiv);
 
   const botDiv = document.createElement("div");
   botDiv.classList.add("chat-message", "bot-message");
-  botDiv.innerHTML = `<span><strong>BeingBot:</strong> ${getBotResponse(userMessage)}</span>`;
+  botDiv.innerHTML = `<span><strong>BeingBot:</strong> ${sanitizeInput(getBotResponse(userMessage))}</span>`;
   chatBox.appendChild(botDiv);
 
   chatBox.scrollTop = chatBox.scrollHeight;
