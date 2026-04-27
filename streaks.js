@@ -35,6 +35,7 @@ function getUserData() {
 
 function saveUserData(data) {
     localStorage.setItem('uniBeingData', JSON.stringify(data));
+    return data;
 }
 
 //-----------------data comparison logic-----------------
