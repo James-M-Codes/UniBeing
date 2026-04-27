@@ -71,7 +71,7 @@ function updateStreak() {
         else if (difference === 1) {
             userData.streak += 1;
             userData.points += 20;
-            saveUserData()
+
         }
         else if (difference > 1) {
             userData.streak = 1;
