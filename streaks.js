@@ -65,6 +65,7 @@ function updateStreak() {
     if (!userData.lastVisit) {
         userData.streak = 1;
         userData.points += 5;
+        userData.level= calculateLevel(userData.points);
     } else {
         const difference = diffDaysLocal(userData.lastVisit, today);
         if (difference === 0) {
@@ -72,10 +73,14 @@ function updateStreak() {
         else if (difference === 1) {
             userData.streak += 1;
             userData.points += 20;
+            userData.level= calculateLevel(userData.points);
 
         }
         else if (difference > 1) {
             userData.streak = 1;
+            userData.points += 5;
+            userData.level= calculateLevel(userData.points);
+   
         }
     }
     userData.lastVisit = today;
