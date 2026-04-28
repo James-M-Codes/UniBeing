@@ -6,7 +6,7 @@ const DEFAULT_USER_DATA = {
     level: 1,
 };
 function getUserData() {
-    const rawData = localStorage.getItem('uniBeingData');
+    const rawData = safeLocalStorageGet('uniBeingData');
     if (!rawData) {
         localStorage.setItem('uniBeingData', JSON.stringify(DEFAULT_USER_DATA));
         return { ...DEFAULT_USER_DATA };
