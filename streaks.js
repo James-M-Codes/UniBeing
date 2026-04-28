@@ -6,7 +6,7 @@ const DEFAULT_USER_DATA = {
     level: 1,
 };
 function getUserData() {
-    const rawData = localStorage.getItem('uniBeingData');
+    const rawData = safeLocalStorageGet('uniBeingData');
     if (!rawData) {
         localStorage.setItem('uniBeingData', JSON.stringify(DEFAULT_USER_DATA));
         return { ...DEFAULT_USER_DATA };
@@ -72,7 +72,7 @@ function updateStreak() {
         else if (difference === 1) {
             userData.streak += 1;
             userData.points += 20;
-
+            saveUserData()
         }
         else if (difference > 1) {
             userData.streak = 1;
@@ -81,7 +81,7 @@ function updateStreak() {
     userData.lastVisit = today;
     userData.level = calculateLevel(userData.points);
     saveUserData(userData);
-    return userData.streak;
+    //return userData.streak;
 }
 
 function getCurrentStreak() {
