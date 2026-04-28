@@ -81,7 +81,7 @@ function updateStreak() {
     userData.lastVisit = today;
     userData.level = calculateLevel(userData.points);
     saveUserData(userData);
-    return userData.streak;
+    //return userData.streak;
 }
 
 function getCurrentStreak() {
